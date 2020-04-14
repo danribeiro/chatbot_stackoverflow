@@ -1,10 +1,4 @@
-import sys
-# insert at 1, 0 is the script path (or '' in REPL)
-sys.path.insert(1, '/Users/danilosoares/Documents/projetos/brasilprev/bpchatbot/src/')
-
 from telegram.ext import ConversationHandler, CommandHandler, MessageHandler, Filters
-
-from utils import call_stackoverflow_api
 from core import BotApi
 
 
