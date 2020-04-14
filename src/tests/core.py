@@ -1,1 +1,0 @@
-/Users/danilosoares/Documents/projetos/brasilprev/bpchatbot/src/core.py
