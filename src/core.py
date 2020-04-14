@@ -1,63 +1,39 @@
 import requests
 import json
-from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
-from conf.settings import TELEGRAM_TOKEN
+from telegram.ext import CommandHandler, Updater
+from telegram.base import TelegramObject
+from utils import call_stackoverflow_api
 
+TELEGRAM_TOKEN = '1083420625:AAHE1yozVMr8gCQcgI0jBDspucc8zxaDpLc'
 
-def start(bot, update):
-    response_message = "Olá, digite os termos da pesquisa"
-    bot.send_message(
-        chat_id=update.message.chat_id,
-        text=response_message
-    )
+class BotApi:
+    @staticmethod
+    def search_tags(bot, update, args):
 
+        tags = ";".join(args)
+        data = call_stackoverflow_api(tags)
 
-def http_cats(bot, update, args):
-    bot.sendPhoto(
-        chat_id=update.message.chat_id,
-        photo=BASE_API_URL + args[0]
-    )
+        response_message = 'Nenhum resultado encontrado'
 
-
-def call_stackoverflow_api(bot, update):
-
-    splited_message = update.message.text.split(" ")
-    tags = ";".join(splited_message)
-    url = 'https://api.stackexchange.com/2.2/search/advanced?order=desc&sort=activity&tagged='+tags+'&site=stackoverflow'
-    result_search = requests.get(url)
-    result_json = result_search.content.decode('utf8').replace("'", '"')
-    data = json.loads(result_json)
-
-    response_message = 'Nenhum resultado encontrado'
-
-    if data['items'].__len__() > 0:
-        for item in data['items']:
-            response_message = "Question: {0}\n\nScore: {1}\n\nLink: {2}\n\n".format(item['title'], item['score'], item['link'])
+        if data['items'].__len__() > 0:
+            for item in data['items']:
+                response_message = "Question: {0}\n\nScore: {1}\n\nLink: {2}\n\n".format(item['title'], item['score'], item['link'])
+                bot.send_message(
+                    chat_id=update.message.chat_id,
+                    text=response_message
+                )
+        else:
             bot.send_message(
                 chat_id=update.message.chat_id,
                 text=response_message
             )
-    else:
-        bot.send_message(
-            chat_id=update.message.chat_id,
-            text=response_message
-        )
+        return data
 
 def main():
     updater = Updater(token=TELEGRAM_TOKEN)
-
     dispatcher = updater.dispatcher
-
-    dispatcher.add_handler(
-        CommandHandler('start', start)
-    )
-
-    dispatcher.add_handler(
-        MessageHandler(Filters.text, call_stackoverflow_api)
-    )
-
+    dispatcher.add_handler(CommandHandler('search', BotApi.search_tags, pass_args=True))
     updater.start_polling()
-
     updater.idle()
 
 
