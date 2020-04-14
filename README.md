@@ -55,14 +55,14 @@ Após criados os links pode-se executar o cenário de teste, para isso é necess
 
 Output:
 
-> Feature: call stackoverflow api for questions  by tags 
-  Scenario: enter tags for search        
-    Given a bot and update from server   # steps/test.py:7 0.008s
-    When user send /search django python # steps/test.py:17 0.828s
-    Then return question list            # steps/test.py:24 0.627s
-1 feature passed, 0 failed, 0 skipped
-1 scenario passed, 0 failed, 0 skipped
-3 steps passed, 0 failed, 0 skipped, 0 undefined
+> Feature: call stackoverflow api for questions  by tags\
+  Scenario: enter tags for search\
+  Given a bot and update from server   # steps/test.py:7 0.008s\
+    When user send /search django python # steps/test.py:17 0.828s\
+    Then return question list            # steps/test.py:24 0.627s\
+1 feature passed, 0 failed, 0 skipped\
+1 scenario passed, 0 failed, 0 skipped\
+3 steps passed, 0 failed, 0 skipped, 0 undefined\
 Took 0m1.463s
 
 
