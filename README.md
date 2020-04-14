@@ -39,12 +39,15 @@ A biblioteca utilizada para criar os cenários é a [behave](https://behave.read
 Para criar os links simbólicos:
 
 `$ cd src`
+
 `ln -s core.py tests/core.py`
+
 `ln -s utils.py tests/utils.py`
 
 Após criados os links pode-se executar o cenário de teste, para isso é necessário rodar o bot, em seguida executar na linha de comando:
 
 `$ cd chatbot_stackoverflow/src/tests`
+
 `$ behave`
 
 
