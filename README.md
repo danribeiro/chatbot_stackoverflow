@@ -17,6 +17,8 @@ Após realizar o clone do repositório
 
 Como resolução da parte 1 do test
 
+`$ cd src`
+
 `$ python main.py <key_word1> <key_word2> <key_word3> ...`
 
 ### Parte 2 
@@ -27,7 +29,7 @@ Como resolução da parte 2 do test
 
 Com o [telegram](http://t.me/danrs_bot) aberto , comando `/start` para inicializar o chabot. 
 
-Para realizar a pesquisa digitar `<key_word1> <key_word2> <key_word3>`
+Para realizar a pesquisa digitar `$ /search <key_word1> <key_word2> <key_word3>`
 
 
 ### Parte 3 (tests)
