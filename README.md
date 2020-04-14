@@ -34,13 +34,21 @@ Para realizar a pesquisa digitar `<key_word1> <key_word2> <key_word3>`
 
 Pequeno cenário de teste foi implementado para cobrir a funcionalidade utilizando BDD(Behavior Driven Development) fazendo uso adaptado do exemplo presente no [link](https://github.com/mmdaz/feature_testing_chat_bots).
 
-A utilizada para criar os cenários é a [behave](https://behave.readthedocs.io/en/latest/tutorial.html). 
+A biblioteca utilizada para criar os cenários é a [behave](https://behave.readthedocs.io/en/latest/tutorial.html). 
 
-Para executar o cenário de teste é necessário rodar o bot, em seguida executar na linha de comando:
+Para criar os links simbólicos:
+
+`$ cd src`
+`ln -s core.py tests/core.py`
+`ln -s utils.py tests/utils.py`
+
+Após criados os links pode-se executar o cenário de teste, para isso é necessário rodar o bot, em seguida executar na linha de comando:
 
 `$ cd chatbot_stackoverflow/src/tests`
 `$ behave`
 
+
+Output:
 
 > Feature: call stackoverflow api for questions  by tags 
   Scenario: enter tags for search        
@@ -52,7 +60,5 @@ Para executar o cenário de teste é necessário rodar o bot, em seguida executa
 3 steps passed, 0 failed, 0 skipped, 0 undefined
 Took 0m1.463s
 
-
-by Danilo Ribeiro
 
 
