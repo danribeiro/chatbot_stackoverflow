@@ -46,6 +46,8 @@ Para criar os links simbólicos:
 
 `ln -s utils.py tests/utils.py`
 
+`ln -s tests/test.py tests/steps/test.py`
+
 Após criados os links pode-se executar o cenário de teste, para isso é necessário rodar o bot, em seguida executar na linha de comando:
 
 `$ cd chatbot_stackoverflow/src/tests`
