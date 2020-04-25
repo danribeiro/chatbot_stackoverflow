@@ -4,7 +4,7 @@ from telegram.ext import CommandHandler, Updater
 from telegram.base import TelegramObject
 from utils import call_stackoverflow_api
 
-TELEGRAM_TOKEN = '1083420625:AAHE1yozVMr8gCQcgI0jBDspucc8zxaDpLc'
+TELEGRAM_TOKEN = ''
 
 class BotApi:
     @staticmethod
