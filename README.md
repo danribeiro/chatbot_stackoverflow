@@ -13,17 +13,7 @@ Após realizar o clone do repositório
 
 `$ pip install -r chatbot_stackoverflow/requirements.txt`
 
-### Parte 1
-
-Como resolução da parte 1 do test
-
-`$ cd src`
-
-`$ python main.py <key_word1> <key_word2> <key_word3> ...`
-
-### Parte 2 
-
-Como resolução da parte 2 do test
+### Rodando o chatbot
 
 `$ python chatbot_stackoverflow/src/core.py`
 
@@ -32,7 +22,7 @@ Com o [telegram](http://t.me/danrs_bot) aberto , comando `/start` para inicializ
 Para realizar a pesquisa digitar `$ /search <key_word1> <key_word2> <key_word3>`
 
 
-### Parte 3 (tests)
+### BDD (tests)
 
 Pequeno cenário de teste foi implementado para cobrir a funcionalidade utilizando BDD(Behavior Driven Development) fazendo uso adaptado do exemplo presente no [link](https://github.com/mmdaz/feature_testing_chat_bots).
 
